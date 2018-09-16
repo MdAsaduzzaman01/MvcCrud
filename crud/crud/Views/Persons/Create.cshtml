@@ -1,0 +1,29 @@
+﻿@model crud.Models.Person
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <td>@Html.EditorFor(m => m.Name)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Address)</th>
+            <td>@Html.EditorFor(m => m.Address)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Phone)</th>
+            <td>@Html.EditorFor(m => m.Phone)</td>
+        </tr>
+        <tr>
+            
+            <td colspan="2" class="text-center"><input type="submit" value="Create" /></td>
+        </tr>
+    </table>
+}
+@Html.ActionLink("Back To List", "Index", "Persons")

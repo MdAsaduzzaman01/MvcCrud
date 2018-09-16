@@ -1,0 +1,30 @@
+﻿@model crud.Models.Person
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@using (Html.BeginForm())
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Id)</th>
+            <td>@Html.DisplayFor(m => m.Id)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <td>@Html.DisplayFor(m => m.Name)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Address)</th>
+            <td>@Html.DisplayFor(m => m.Address)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Phone)</th>
+            <td>@Html.DisplayFor(m => m.Phone)</td>
+        </tr>
+    </table>
+}
+@Html.ActionLink("Back To List", "Index", "Persons") &nbsp; &nbsp;&nbsp;&nbsp;
+@Html.ActionLink("Edit", "Edit", new { Id=Model.Id})

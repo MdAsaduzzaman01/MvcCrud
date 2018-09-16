@@ -1,0 +1,31 @@
+﻿@model IEnumerable<crud.Models.Person>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Create","Create","Persons")
+<table class="table table-bordered">
+    <tr>
+        <td>@Html.DisplayNameFor(m=>m.Id)</td>
+        <td>@Html.DisplayNameFor(m => m.Name)</td>
+        <td>@Html.DisplayNameFor(m => m.Address)</td>
+        <td>@Html.DisplayNameFor(m => m.Phone)</td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m=>item.Id)</td>
+            <td>@Html.DisplayFor(m => item.Name)</td>
+            <td>@Html.DisplayFor(m => item.Address)</td>
+            <td>@Html.DisplayFor(m => item.Phone)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id})
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+
+    }
+</table>
